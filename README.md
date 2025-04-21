@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Certainly! Here's a sample `README.md` that you can use for your project:
 
-## Getting Started
+---
 
-First, run the development server:
+# **UbuntuDriveFront**
+
+UbuntuDriveFront is a cloud file management and sharing application designed to resemble the Ubuntu file system interface. It allows users to manage, organize, and share their files easily, with an intuitive design inspired by Ubuntu’s aesthetic. The project is built using **Next.js** for the frontend and a backend API hosted on **Node.js**.
+
+The app mimics the functionality of popular cloud storage services, such as Google Drive, but offers the simplicity and visual design that Ubuntu users love.
+
+**Live Demo**: [https://ubuntu-drive.duckdns.org/](https://ubuntu-drive.duckdns.org/)
+
+## **Features**
+
+- **File Management**: Upload, organize, and manage your files with a clean and user-friendly interface.
+- **File Sharing**: Share your files with others via secure links.
+- **Responsive Design**: Fully responsive interface for seamless usage on any device.
+- **Cloud Sync**: Sync your files across different devices.
+- **Ubuntu UI Design**: A sleek and familiar interface based on Ubuntu’s native design.
+
+## **Tech Stack**
+
+- **Frontend**: Next.js
+- **Backend**: Node.js (API)
+- **Reverse Proxy**: Nginx
+- **SSL**: Let's Encrypt (HTTPS)
+- **Deployment**: VPS (Ubuntu 20.04)
+
+## **Getting Started**
+
+### **1. Clone the repository**
+
+To get started, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/hatem782/UbuntuDriveFront.git
+cd UbuntuDriveFront
+```
+
+### **2. Install dependencies**
+
+Make sure you have **Node.js** and **npm** installed. If not, install them following the instructions for your OS. Then, run:
+
+```bash
+npm install
+```
+
+### **3. Run the app locally**
+
+To run the Next.js app locally on port 3000:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### **4. Backend API Setup**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The backend for this project runs on port 8080. You can set up the backend by following the API-specific instructions in the backend folder.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## **Deployment**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The app is deployed on a **VPS** running **Ubuntu**. Here's a brief overview of how it’s deployed:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend** (Next.js) is running on port `3000`
+- **Backend API** is running on port `8080`
+- **Nginx** is used as a reverse proxy to route traffic for the respective domains:
+  - `https://ubuntu-drive.duckdns.org/` → Frontend (port 3000)
+  - `https://ubuntu-drive-api.duckdns.org/` → Backend API (port 8080)
+- SSL certificates are managed with **Let’s Encrypt** for secure HTTPS connections.
 
-## Deploy on Vercel
+## **Contributing**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to fork this repository, contribute, or create issues for suggestions and improvements. Pull requests are always welcome!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## **License**
+
+This project is open source and available under the MIT License.
+
+---
+
+Feel free to customize this README further based on your specific setup or additional features. Let me know if you need more adjustments!
