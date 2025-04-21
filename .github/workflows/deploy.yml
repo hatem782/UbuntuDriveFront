@@ -1,0 +1,39 @@
+name: Deploy FRONT
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
+
+      - name: Execute commands on VPS
+        env:
+          VPS_HOST: ${{ secrets.VPSIP }}
+          VPS_USER: ${{ secrets.VPSUSER }}
+          VPS_PASS: ${{ secrets.VPSPASS }}
+          VPS_GUSER: ${{ secrets.GITUSER }}
+          VPS_GPASS: ${{ secrets.GITPASS }}
+        run: |
+          sshpass -p "$VPS_PASS" ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST <<EOF
+           sudo -s
+           cd /home/UbuntuDriveFront
+           git remote set-url origin https://$VPS_GPASS@github.com/$VPS_GUSER/UbuntuDriveFront.git
+           git pull origin main
+           npm install
+           npm run build
+           pm2 stop UbuntuDriveFront
+           pm2 delete UbuntuDriveFront
+           sudo pm2 start npm --name "UbuntuDriveFront" -- run start -- --port=3000
+
+# screen -S dash -X quit || true
+# screen -dmS dash sh -c 'sudo npm start -- -p 3001'
