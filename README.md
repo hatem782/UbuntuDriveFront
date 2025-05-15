@@ -1,7 +1,3 @@
-Certainly! Here's a sample `README.md` that you can use for your project:
-
----
-
 # **UbuntuDriveFront**
 
 UbuntuDriveFront is a cloud file management and sharing application designed to resemble the Ubuntu file system interface. It allows users to manage, organize, and share their files easily, with an intuitive design inspired by Ubuntu’s aesthetic. The project is built using **Next.js** for the frontend and a backend API hosted on **Node.js**.
@@ -81,7 +77,3 @@ Feel free to fork this repository, contribute, or create issues for suggestions 
 ## **License**
 
 This project is open source and available under the MIT License.
-
----
-
-Feel free to customize this README further based on your specific setup or additional features. Let me know if you need more adjustments!
